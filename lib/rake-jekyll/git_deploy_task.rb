@@ -52,7 +52,7 @@ module Rake::Jekyll
       end
 
       def push(remote_url, branch)
-        sh "git push -q #{remote_url} #{branch}:#{branch}"
+        `git push -q #{remote_url} #{branch}:#{branch}`
       end
 
       private
