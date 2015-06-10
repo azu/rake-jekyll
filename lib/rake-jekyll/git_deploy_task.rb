@@ -16,7 +16,8 @@ module Rake::Jekyll
       end
 
       def clone_repo(url)
-        `git clone '#{url}' .` or raise "Fail git clone"
+        puts "\ngit clone..."
+        `git clone -q '#{url}' .` or raise "Fail git clone"
       end
 
       def checkout_remote_branch(name)
@@ -52,6 +53,7 @@ module Rake::Jekyll
       end
 
       def push(remote_url, branch)
+        puts "\ngit push..."
         `git push -q #{remote_url} #{branch}:#{branch}` or raise "Fail git push"
       end
 
